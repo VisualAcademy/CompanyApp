@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using Dul.Data;
 //using System.Data.SqlClient;
 using Microsoft.Data.SqlClient;
-using System.Text;
-using Dul.Data;
+using System;
+using System.Collections.Generic;
+using System.Data;
 
-namespace DotNetNote.Models.Companies
+namespace DotNetNote.Models
 {
     public class CompanyRepositoryAdo : ICompanyRepository
     {
@@ -101,7 +100,7 @@ namespace DotNetNote.Models.Companies
                     Name = name
                 });
             }
-            con.Close(); 
+            con.Close();
 
             return companies;
         }

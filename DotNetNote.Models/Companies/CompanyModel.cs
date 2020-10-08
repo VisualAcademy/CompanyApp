@@ -1,4 +1,4 @@
-﻿namespace DotNetNote.Models.Companies
+﻿namespace DotNetNote.Models
 {
     public class CompanyModel
     {

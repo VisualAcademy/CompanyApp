@@ -1,14 +1,13 @@
 ﻿using Dapper;
 using Dul.Data;
+//using System.Data.SqlClient;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
-//using System.Data.SqlClient;
-using Microsoft.Data.SqlClient;
 using System.Linq;
-using System.Text;
 
-namespace DotNetNote.Models.Companies
+namespace DotNetNote.Models
 {
     public class CompanyRepositoryDapper : ICompanyRepository
     {

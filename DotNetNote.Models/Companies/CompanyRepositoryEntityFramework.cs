@@ -2,21 +2,27 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace DotNetNote.Models.Companies
+namespace DotNetNote.Models
 {
     public class CompanyRepositoryEntityFramework : ICompanyRepository
     {
+        private readonly CompanyContext db;
+
+        public CompanyRepositoryEntityFramework(CompanyContext context)
+        {
+            this.db = context;
+        }
+
         public CompanyModel Add(CompanyModel model)
         {
-            using (var db = new CompanyContext())
+            //using (var db = new CompanyContext())
             {
                 db.Companies.Add(model);
-                db.SaveChanges(); 
+                db.SaveChanges();
             }
 
-            return model; 
+            return model;
         }
 
         public CompanyModel Browse(int id)
@@ -51,12 +57,12 @@ namespace DotNetNote.Models.Companies
 
         public List<CompanyModel> Read()
         {
-            var companies = new List<CompanyModel>(); 
-            using (var db = new CompanyContext())
+            var companies = new List<CompanyModel>();
+            //using (var db = new CompanyContext())
             {
                 companies = db.Companies.ToList();
             }
-            return companies; 
+            return companies;
         }
 
         public List<CompanyModel> Search(string query)
